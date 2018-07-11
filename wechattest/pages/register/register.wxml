@@ -1,0 +1,23 @@
+<button id="photo" bindtap='choose_photo'>上传图片</button>
+<view id='user'>
+
+  <view class='user_info'>
+    <input placeholder='姓名' placeholder-style='color: gray' bindblur='user_name'></input>
+  </view>
+
+  <view class='user_info'>
+    <input placeholder='手机号' placeholder-style='color: gray' bindblur='user_phone'></input>
+    <text class='line'></text>
+  </view>
+
+  <view class='vc'>
+    <image id='vc_icon' src='../images/vc2.png' bindtap='get_vc'></image>
+    <input id='vc_input' placeholder='验证码' placeholder-style='color: gray' bindblur='user_vc'></input>
+  </view>
+
+  <view class='user_info'>
+     <input placeholder='密码' placeholder-style='color: gray' password='true' bindblur='user_pwd'></input>
+  </view>
+
+</view>
+<button style="margin-left: 50rpx; margin-right: 50rpx; margin-top: 50rpx; border-radius: 20rpx" type='primary' bindtap='userregister'>注册</button>

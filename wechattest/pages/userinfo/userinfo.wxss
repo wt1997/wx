@@ -1,0 +1,38 @@
+/* pages/userinfo/userinfo.wxss */
+page{
+  background-color: #e8e8e8;
+}
+#change_photo{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30rpx;
+  padding: 30rpx;
+
+}
+#u_photo{
+  width: 150rpx;
+  height: 150rpx;
+}
+#u_name{
+  color: gray;
+}
+#u_phone{
+  color: gray;
+}
+.line{
+  height: 1rpx;
+  background-color: #e8e8e8;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.item{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx;
+  background-color: white;
+}
+.all{
+  background-color: white;
+}

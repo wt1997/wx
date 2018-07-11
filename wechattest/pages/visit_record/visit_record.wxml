@@ -1,0 +1,30 @@
+<!--pages/visit_record/visit_record.wxml-->
+<view>
+  <scroll-view class="scroll" style="height:580px;margin-top: 20rpx;" scroll-y="true">
+    <view class="block" wx:for="{{visit_record}}" wx:for-item="item">
+      <view class='all {{isDelete==0?"":"hidden"}}'>
+        <view class='one'>
+          <view id='people'>{{item.p_name}}</view>
+          <view id='time'>{{item.s_time}}</view>
+        </view>
+        <view class='tandt'>
+          <view class='two' bindtap='detail_btn' id='{{item.vid}}'>
+            <image id='img_detail' src='../images/form.png'></image>
+            <view id='text_detail' style='size: 16rpx;'>详情</view>
+          </view>
+          <view class='three' bindtap='delete_btn' id='{{item.vid}}'>
+            <image id='img_delete' src='../images/delete.png'></image>
+            <view id='text_delete'>删除</view>
+          </view>
+        </view>
+      </view>
+
+      <view class='down clearfix {{uhide==item.vid?"":"hidden"}}'>
+        <view class='ml30'>开始时间：{{item.s_time}}</view>
+        <view class='ml30'>结束时间：{{item.e_time}}</view>
+        <view class='ml30'>拜访缘由：{{item.aim}}</view>
+        <view class='feedBack'>状态：{{item.state}}</view>
+      </view>
+    </view>  
+  </scroll-view>
+</view>

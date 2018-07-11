@@ -1,0 +1,49 @@
+/* pages/main/main.wxss */
+page{
+  background-color: #e8e8e8;
+}
+.weui-cell__bd{
+  -webkit-box-flex:1;
+  -webkit-flex:1;
+  flex:1;
+}
+.weui-cell{
+  display: flex;
+  align-items: center;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  margin-top: 10rpx;
+  margin-bottom: 20rpx;
+  background-color: white;
+  }
+.weui-cell__ft{
+  text-align:right;
+  color: #999
+  }
+.userinfo-photo {
+  width: 140rpx;
+  height: 140rpx;
+  margin: 20rpx;
+  margin-top: 18rpx;
+  border-radius: 50%;
+}
+.user-info{
+  display: flex;
+  align-items: center;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  margin-top: 30rpx;
+  margin-bottom: 10rpx;
+  background-color: white;
+}
+.name-id{
+  margin-left: 30rpx;
+}
+.msg_icon{
+  width: 60rpx;
+  height: 60rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}

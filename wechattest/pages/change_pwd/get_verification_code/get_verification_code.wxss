@@ -1,0 +1,34 @@
+/* pages/change_pwd/change_pwd.wxss */
+.input{
+  padding-left: 10px;
+  height: 44px;
+}
+.inputView{
+  border: 1px solid red;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 50px;
+}
+.inputView2{
+  border: 1px solid red;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 62%;
+  margin-top: 50px;
+}
+#vc_btn{
+  size: mini;
+  font-size: 13px;
+  position: fixed;
+  right: 20px;
+  margin-top: 10px;
+}
+#next{
+  size: mini;
+  font-size: 18px;
+  position: fixed;
+  right: 30px;
+  margin-top: 10px;
+  color: green;
+}

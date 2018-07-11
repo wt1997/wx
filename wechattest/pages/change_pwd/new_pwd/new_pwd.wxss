@@ -1,0 +1,18 @@
+/* pages/change_pwd/new_pwd/new_pwd.wxss */
+.input{
+  padding-left: 10px;
+  height: 44px;
+}
+.inputView{
+  border: 1px solid red;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 30px;
+}
+#certain_change{
+  position: fixed;
+  right: 20px;
+  margin-top: 10px;
+  font-size: 16px;
+}

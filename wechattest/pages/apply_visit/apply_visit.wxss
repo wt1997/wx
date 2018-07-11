@@ -1,0 +1,124 @@
+/* pages/apply_visit/apply_visit.wxss */
+page{
+  background-color: #e8e8e8;
+}
+.input{
+  height: 30px;
+  width: 60px;
+  text-align: center;
+}
+.inputView{
+  border: 1px solid red;
+  border-radius: 8px;
+}
+.st{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+#visit_cause{
+  height: max-content;
+  width: 200rpx;
+}
+#commit{
+  display: flex;
+  justify-content: flex-end;
+}
+#c_icon{
+  width: 40px;
+  height: 40px;
+  margin-top: 25rpx;
+  margin-right: 40rpx;
+}
+.textarea-wrp {
+  padding: 25rpx;
+  background-color: #fff;
+}
+.t_title{
+  display: flex;
+  margin-top: 30rpx;
+  padding-top: 20rpx;
+  padding-left: 20rpx;
+  padding-bottom: 10rpx;
+  width: 77px;
+  height: 30px;
+  border-top-right-radius: 20rpx;
+  background-color: white;
+  align-items: center;
+}
+
+.cxj-menu {
+  background-color: white;
+  width: 750rpx;
+  height: 80rpx;
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+}
+.cxj-menu .active image {
+  transform: rotate(180deg);
+  background: none;
+}
+.cxj-menu .active {
+  background-color: #fff;
+}
+.flex-view {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  line-height: 80rpx;
+}
+
+.cxj-icon {
+  width: 24rpx;
+  height: 24rpx;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.cxj-content {
+  width: 750rpx;
+  font-size: 28rpx;
+}
+
+.cxj-content-li {
+  line-height: 60rpx;
+  text-align: center;
+}
+
+.cxj-tab-layout {
+  width: 750rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 80rpx;
+  z-index: 1;
+  border-bottom: solid 1px #eee;
+  height: 100%;
+  background-color: rgba(000,000,000,.5);
+  
+}
+
+.cxj-tab-layout .active {
+  color: #00aa14;
+}
+
+.cxj-tab-layout view {
+  width: 750rpx;
+  text-indent: 40rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  border-top: 1rpx solid #e7e7e7;
+  background-color:#ffffff;
+  
+}
+.line{
+  height: 1rpx;
+  background-color: #e8e8e8;
+}
