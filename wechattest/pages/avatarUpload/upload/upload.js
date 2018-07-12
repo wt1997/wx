@@ -36,7 +36,7 @@ Page({
         wx.uploadFile({
           url: getApp().globalData.UpdatePhotoUrl,
           filePath: avatar,
-          name: 'photo',
+          name: 'file',
           formData: {
             'uid':getApp().globalData.userId,
           },
@@ -46,11 +46,13 @@ Page({
             }else{
               console.log("修改失败！")
             }
+            console.log(res.data);
           },
           fail: function(res){
-
+            console.log(res.data);
           }
         })
+        console.log("1");
         wx.redirectTo({
           url: `../../userinfo/userinfo?avatar=${avatar}`
         })

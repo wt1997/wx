@@ -11,33 +11,53 @@ Page({
     pwd_error: '../images/pwd_error.png',
     phone_less: '../images/phone_less.png'
   },
+  //监听input框的输入获取用户输入数据
   usercount: function(e){
     this.data.count = e.detail.value;
-  },
-  userpwd: function(e){
-    this.data.password = e.detail.value;
-  },
-  userlogin: function(){
-    console.log("账号：",this.data.count);
-    console.log("密码：",this.data.password);
-    try {
-      wx.setStorageSync("userId", this.data.count);
-      wx.setStorageSync("userPwd", this.data.password);
-    } catch (e) {
-      console.log("Error" + e);
-    }
-    /*if(this.data.count.length!=11){
+    if (this.data.count.length != 11) {
       wx.showToast({
         title: '手机号错误',
-        image: this.data.phone_less,
+        image: this.data.pwd_error,
         duration: 1000,
         mask: true
       })
-    }else{
-      
     }
+  },
+  userpwd: function(e){
+    this.data.password = e.detail.value;
+    if(this.data.password.length<1){
+      wx.showToast({
+        title: '密码不能为空',
+        image: '../images/warn1.png',
+        duration: 1000,
+        mask: true
+      })
+    }
+  },
+  //
+  userlogin: function(){
+    try {
+      wx.setStorage({
+        key: 'userId',
+        data: this.data.count,
+      })
+      wx.setStorage({
+        key: 'userPwd',
+        data: this.data.password,
+      })
+      wx.setStorage({
+        key: 'IsLogin',
+        data: true,
+      })
+    } catch (e) {
+      console.log("Error" + e);
+    }
+    /*
+    //发起登录的网络请求
     wx.request({
+      //服务器端接口url
       url: getApp().globalData.LoginUrl,
+      //携带的用户数据
       data:{
         uid: this.data.count,
         password: this.data.password
@@ -46,28 +66,44 @@ Page({
       header: {
         'content-type': 'application/text'
       },
+      //响应成功后的操作
       success: function(res){
         console.log(res);
+        //res.data=1代表登录申请通过
         if(res.data == '1'){
+          //执行到这里代表用户登录成功，所以在这里添加用户数据的缓存
           try{
-            wx.setStorageSync("userId", this.data.count);
-            wx.setStorageSync("userPwd", this.data.password);
+            wx.setStorage({
+              key: 'userId',
+              data: this.data.count,
+            })
+            wx.setStorage({
+              key: 'userPwd',
+              data: this.data.password,
+            })
+            wx.setStorage({
+              key: 'IsLogin',
+              data: true,
+            })
           }catch(e){
             console.log("Error"+e);
           }
+          //设置全局变量的用户ID,为本次登录操作使用
           getApp().globalData.userId=this.data.count;
+          //跳转到主页面
           wx.navigateTo({
             url: '../main/main',
           })
-        } else if (res.data == '0'){
+
+        } else if (res.data == '0'){//res.data=0用户密码不正确
             wx.showToast({
-              title: '密码错误',
+              title: '手机号或密码错误',
               image: "../images/pwd_error.png",
               duration: 1000,
               mask: true
             })
         }
-        else{
+        else{//res.data=-1代表手机号未注册
             wx.showToast({
               title: '手机号未注册',
               image: '../images/unregister_phone.png',

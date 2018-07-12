@@ -7,12 +7,24 @@ Page({
   data: {
     src: '../images/wyz.png'
   },
+  //注销登录响应函数，确定后清空用户数据缓存，返回登录界面
   logout: function(){
-    wx.clearStorageSync();
-    wx.redirectTo({
-      url: '../login/login',
+    wx.showModal({
+      title: '提示',
+      content: '确定注销登录',
+      success: function(res){
+        if(res.confirm){
+          wx.clearStorage();
+          wx.redirectTo({
+            url: '../login/login',
+          })
+        }else if(res.cancel){
+          console.log("取消")
+        }
+      }
     })
   },
+  //进行头像更换的调用函数
   c_photo: function(){
     wx.chooseImage({
       count: 1, // 默认9
@@ -27,6 +39,7 @@ Page({
       }
     })
   },
+  //更改密码的调用函数
   change_pwd: function(){
     wx.navigateTo({
       url: '../change_pwd/get_verification_code/get_verification_code',

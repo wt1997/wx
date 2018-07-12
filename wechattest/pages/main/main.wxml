@@ -1,8 +1,8 @@
-<view class="user-info">
+<view class="user-info" bindtap='item_one'>
 <image class="userinfo-photo" src="../images/wyz.png"></image>
-<view class="name-id" bindtap='item_one'>
+<view class="name-id">
   <view style='font-size: 15px;color: #000'>吴彦祖</view>
-  <view style='margin-top: 6px;font-size: 14px;color: gray'>17864156666</view>
+  <view style='margin-top: 6px;font-size: 14px;color: gray'>{{userId}}</view>
 </view>
 </view>  
 <view style='margin-top: 20px;'>

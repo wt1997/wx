@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    icon: null
+    icon: null,
+    userId: ''
   },
   item_one: function(){
     wx.navigateTo({
@@ -28,7 +29,8 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      icon: base.icon20
+      icon: base.icon20,
+      userId: getApp().globalData.userId
     })
   },
 
