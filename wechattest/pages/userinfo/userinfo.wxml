@@ -1,34 +1,51 @@
-<view class='all'>
-  <view id='change_photo' bindtap='c_photo'>
-    <view>头像</view>
-    <image id='u_photo' src='{{src}}'></image>
-  </view>
-  <view class='line'></view>
-  <view class='item'>
-    <view>姓名</view>
-    <view id='u_name'>吴彦祖</view>
-  </view>
-
-  <view class='line'></view>
-
-  <view class='item'>
-    <view>手机号</view>
-    <view id='u_phone'>17864156666</view>
-  </view>
-
-  <view class='line'></view>
-
-  <view class='item' bindtap='change_pwd'>
-    <view>修改密码</view>
-  </view>
-
-  <view class='line'></view>
-
-  <view class='item' catchtap='logout'>
-    <view>注销登录</view>
-  </view>
-
+<!--pages/userinfo/userinfo.wxml-->
+<view id='userp' catchtap='c_photo'>
+<image id='userphoto' src='../images/wyz.png'></image>
 </view>
- <view class='item' style='margin-top: 30rpx;'>
-    <view>我的地址</view>
+
+<view id='pn' catchtap='c_photo'>
+  <view class='username'>头像</view>
+  <image id='edit' src='../images/editp.png'></image>
 </view>
+
+<view class='line' style='margin-top:20px;'></view>
+
+<view class='item'>
+  <view id='pn' style='margin-top:0px;'>
+    <view class='username'>姓名</view>
+    <image id='edit' src='../images/editp.png'></image>
+  </view>
+  <view class='username'>吴彦祖</view>
+</view>
+
+<view class='line'></view>
+
+<view class='item'>
+  <view id='pn' style='margin-top:0px;'>
+    <view class='username'>手机号</view>
+    <image id='edit' src='../images/editp.png'></image>
+  </view>
+  <view class='username'>17864156666</view>
+</view>
+
+<view class='line'></view>
+
+<view class='item' catchtap='change_pwd'>
+  <view class='username'>修改密码</view>
+</view>
+
+<view class='line'></view>
+
+<view class='item' catchtap='logout'>
+  <view class='username'>注销登录</view>
+</view>
+
+<view class='line'></view>
+
+<view class='line' style='margin-top:15px;'></view>
+
+<view class='item'  bindtap='change_pwd'>
+  <view class='username'>更多</view>
+</view>
+
+<view class='line'></view>

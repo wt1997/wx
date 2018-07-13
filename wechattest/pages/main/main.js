@@ -7,18 +7,23 @@ Page({
    */
   data: {
     icon: null,
-    userId: ''
+    userId: '',
+    userphoto: '',
+    username: '',
   },
-  item_one: function(){
+  //跳转至用户信息界面
+  user_info: function(){
     wx.navigateTo({
       url: '../userinfo/userinfo',
     })
   },
+  //跳转至申请访问页面
   apply_visit: function(){
     wx.navigateTo({
       url: '../apply_visit/apply_visit',
     })
   },
+  //跳转至记录查看页面
   visit_record: function(){
     wx.navigateTo({
       url: '../visit_record/visit_record',
@@ -28,9 +33,41 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
     this.setData({
       icon: base.icon20,
-      userId: getApp().globalData.userId
+      userId: getApp().globalData.userId,
+      username: getApp().globalData.userName,
+      userphoto: getApp().globalData.userPhoto
+    })
+    wx.request({
+      url: getApp().globalData.GetNameUrl,
+      data: {
+        'uid':getApp().globalData.userId
+      },
+      method:'GET',
+      header: {
+        'content-type':"application/json"
+      },
+      success: function(res){
+        console.log(res);
+        getApp().globalData.userName = res.name;
+        that.setData({
+          username: res.data.name,
+        })
+      },
+      fail: function(res){
+        console.log(res)
+      }
+    })
+    wx.downloadFile({
+      url: getApp().globalData.GetPhotoUrl + '?uid=' + getApp().globalData.userId,
+      success: function(res){
+        getApp().globalData.userPhoto = res.tempFilePath;
+        that.setData({
+          userphoto: res.tempFilePath
+        })
+      }
     })
   },
 

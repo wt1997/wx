@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    src: '../images/wyz.png'
+    src: getApp().globalData.userPhoto
   },
   //注销登录响应函数，确定后清空用户数据缓存，返回登录界面
   logout: function(){
@@ -49,13 +49,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let { avatar } = options
-    console.log(avatar);
-    if (avatar) {
-      this.setData({
-        src: avatar
-      })
-    }
+    this.setData({
+      src: getApp().globalData.userPhoto
+    })
   },
 
   /**

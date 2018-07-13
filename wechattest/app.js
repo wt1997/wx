@@ -9,7 +9,7 @@ App({
   globalData: {
     userInfo: null,
     userId: '17864154940',
-    userPhoto: 'pages/images/wyz.png',
+    userPhoto: '../images/wyz.png',
     userName: '吴彦祖',
     LoginUrl: 'http://121.250.222.82:8080/weixin/login',
     PlaceUrl: 'http://121.250.222.82:8080/weixin/getplace',
@@ -18,6 +18,8 @@ App({
     UpdatePhotoUrl: 'http://121.250.222.82:8080/weixin/updatephoto',
     VisitApplyUrl: 'http://121.250.222.82:8080/weixin/apply',
     QueryApplyUrl: 'http://121.250.222.82:8080/weixin/queryapply',
-    DeleteappluUrl: 'http://121.250.222.82:8080/weixin/deleteapply'
+    DeleteappluUrl: 'http://121.250.222.82:8080/weixin/deleteapply',
+    GetNameUrl: 'http://121.250.222.82:8080/weixin/getname',
+    GetPhotoUrl: 'http://121.250.222.82:8080/weixin/getphoto'
   }
 })

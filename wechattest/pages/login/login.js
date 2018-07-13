@@ -9,7 +9,8 @@ Page({
     password: '',
     unregister_phone: '../images/unregister_phone.png',
     pwd_error: '../images/pwd_error.png',
-    phone_less: '../images/phone_less.png'
+    phone_less: '../images/phone_less.png',
+    userImageBase64: ''
   },
   //监听input框的输入获取用户输入数据
   usercount: function(e){
@@ -125,7 +126,7 @@ Page({
         })
       }
     })*/
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../main/main',
     })
   },

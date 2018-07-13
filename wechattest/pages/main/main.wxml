@@ -1,20 +1,16 @@
-<view class="user-info" bindtap='item_one'>
-<image class="userinfo-photo" src="../images/wyz.png"></image>
-<view class="name-id">
-  <view style='font-size: 15px;color: #000'>吴彦祖</view>
-  <view style='margin-top: 6px;font-size: 14px;color: gray'>{{userId}}</view>
+<!--pages/main/main.wxml-->
+<view id='userp'>
+<image id='userphoto' src='{{userphoto}}' catchtap='user_info'></image>
 </view>
-</view>  
-<view style='margin-top: 20px;'>
-
-            <view class="weui-cell">
-                <image class='msg_icon' src='../images/apply.png'></image>
-                <view class="weui-cell__bd" style='margin-left: 12px;font-size: 16px;' bindtap='apply_visit'>申请访问</view>
-                <view class="weui-cell__ft"></view>
-            </view>
-
-            <view class="weui-cell">
-                <image class='msg_icon' src='../images/record.png'></image>
-                <view class="weui-cell__bd" style='margin-left: 12px;font-size: 16px;' bindtap='visit_record'>拜访记录</view>
-            </view>
+<view class='username'>{{username}}</view>
+<view class='userphoto'>{{userId}}</view>
+<view class='both'>
+  <view class='mbk' catchtap='apply_visit'>
+    <image class='icon' src='../images/apply.png'></image>
+    <view class='text'>申请访问</view>
+  </view>
+  <view class='mbk' catchtap='visit_record'>
+    <image class='icon' src='../images/record.png'></image>
+    <view class='text'>访问记录</view>
+  </view>
 </view>
