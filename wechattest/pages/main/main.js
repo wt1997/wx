@@ -7,7 +7,7 @@ Page({
    */
   data: {
     icon: null,
-    userId: '',
+    userId: getApp().globalData.userId,
     userphoto: '',
     username: '',
   },
@@ -34,12 +34,12 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    this.setData({
+   /* this.setData({
       icon: base.icon20,
       userId: getApp().globalData.userId,
       username: getApp().globalData.userName,
       userphoto: getApp().globalData.userPhoto
-    })
+    })*/
     wx.request({
       url: getApp().globalData.GetNameUrl,
       data: {
@@ -51,7 +51,7 @@ Page({
       },
       success: function(res){
         console.log(res);
-        getApp().globalData.userName = res.name;
+        getApp().globalData.userName = res.data.name;
         that.setData({
           username: res.data.name,
         })
@@ -82,7 +82,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
+    this.setData({
+      userId: getApp().globalData.userId,
+      username: getApp().globalData.userName,
+      userphoto: getApp().globalData.userPhoto
+    })
   },
 
   /**

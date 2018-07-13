@@ -5,7 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    src: getApp().globalData.userPhoto
+    src: '',
+    username: '',
+    userphone: '',
+    who: 1
   },
   //注销登录响应函数，确定后清空用户数据缓存，返回登录界面
   logout: function(){
@@ -34,7 +37,7 @@ Page({
         const src = res.tempFilePaths[0]
 
         wx.redirectTo({
-          url: `../avatarUpload/upload/upload?src=${src}`
+          url: `../avatarUpload/upload/upload?src=${src}`+'&who='+ 1
         })
       }
     })
@@ -50,7 +53,9 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      src: getApp().globalData.userPhoto
+      src: getApp().globalData.userPhoto,
+      username: getApp().globalData.userName,
+      userphone: getApp().globalData.userId
     })
   },
 

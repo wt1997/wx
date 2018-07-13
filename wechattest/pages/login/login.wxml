@@ -1,7 +1,7 @@
 
 <!--pages/login/login.wxml-->
 <view id='userp'>
-<image id='userphoto' src='../images/wyz.png'></image>
+<image id='userphoto' src='{{src}}'></image>
 </view>
 
 <view class='put'>

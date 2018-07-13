@@ -1,16 +1,28 @@
 //app.js
 App({
   onLaunch: function () {
-    var userId = wx.getStorageSync('userId');
-    var userPwd = wx.getStorageSync('userPwd');
-    console.log(userId+"userID");
-    console.log(userPwd+'usrPwd');
+    wx.getStorage({
+      key: 'IsLogin',
+      success: function(res) {
+        console.log(res.data);
+      },
+      fail: function(res){
+        console.log(res.data+'--')
+      }
+    })
   },
   globalData: {
     userInfo: null,
-    userId: '17864154940',
-    userPhoto: '../images/wyz.png',
-    userName: '吴彦祖',
+    userId: '',
+    userPhoto: '',
+    userName: '',
+    userPwd:'',
+    r_name:'',
+    r_phone:'',
+    r_vc:'',
+    r_pwd:'',
+    r_svc:'',
+    r_right: '',
     LoginUrl: 'http://121.250.222.82:8080/weixin/login',
     PlaceUrl: 'http://121.250.222.82:8080/weixin/getplace',
     VerificateUrl: 'http://121.250.222.82:8080/weixin/verificate',

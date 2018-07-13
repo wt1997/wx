@@ -1,6 +1,6 @@
 <!--pages/userinfo/userinfo.wxml-->
 <view id='userp' catchtap='c_photo'>
-<image id='userphoto' src='../images/wyz.png'></image>
+<image id='userphoto' src='{{src}}'></image>
 </view>
 
 <view id='pn' catchtap='c_photo'>
@@ -15,7 +15,7 @@
     <view class='username'>姓名</view>
     <image id='edit' src='../images/editp.png'></image>
   </view>
-  <view class='username'>吴彦祖</view>
+  <view class='username'>{{username}}</view>
 </view>
 
 <view class='line'></view>
@@ -25,7 +25,7 @@
     <view class='username'>手机号</view>
     <image id='edit' src='../images/editp.png'></image>
   </view>
-  <view class='username'>17864156666</view>
+  <view class='username'>{{userphone}}</view>
 </view>
 
 <view class='line'></view>

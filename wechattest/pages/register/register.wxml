@@ -1,23 +1,23 @@
-<button id="photo" bindtap='choose_photo'>上传图片</button>
-<view id='user'>
-
-  <view class='user_info'>
-    <input placeholder='姓名' placeholder-style='color: gray' bindblur='user_name'></input>
+<view class='container'>
+  <view class='put'>
+    <view class='text'>姓名</view>
+    <input class='input' placeholder-style='color: gray' bindblur="user_name" value='{{name}}'></input>
   </view>
-
-  <view class='user_info'>
-    <input placeholder='手机号' placeholder-style='color: gray' bindblur='user_phone'></input>
-    <text class='line'></text>
+  <view class='put'>
+    <view class='text'>手机号</view>
+    <input class='input' type='number' placeholder-style='color: gray' bindblur='user_phone' value='{{phone}}'></input>
   </view>
-
   <view class='vc'>
-    <image id='vc_icon' src='../images/vc2.png' bindtap='get_vc'></image>
-    <input id='vc_input' placeholder='验证码' placeholder-style='color: gray' bindblur='user_vc'></input>
+    <input class='input' style='width: 100px;padding-top: 2px;padding-bottom: 2px;' placeholder='验证码' type='number' bindblur="user_vc" value='{{user_vc}}'></input>
+    <view id='u_p' style='font-size: 16px;' catchtap='get_vc'>获取</view>
   </view>
-
-  <view class='user_info'>
-     <input placeholder='密码' placeholder-style='color: gray' password='true' bindblur='user_pwd'></input>
+  <view class='put'>
+    <view class='text'>密码</view>
+    <input class='input' type='password'placeholder-style='color: gray' bindblur='user_pwd' value='{{pwd}}'></input>
   </view>
-
+  <view class='user_p' style='margin-top: 20px;'>
+    <image src='{{src}}' id='userphoto'></image>
+    <view id='u_p' catchtap='c_photo'>上传图片</view>
+  </view>
 </view>
-<button style="margin-left: 50rpx; margin-right: 50rpx; margin-top: 50rpx; border-radius: 20rpx" type='primary' bindtap='userregister'>注册</button>
+<view id='register' catchtap='userregister'>注册</view>

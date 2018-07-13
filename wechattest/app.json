@@ -6,7 +6,6 @@
     "pages/userinfo/userinfo",
     "pages/visit_record/visit_record",
     "pages/apply_visit/apply_visit",
-    "pages/avatarUpload/index/index",
     "pages/avatarUpload/upload/upload",
     "pages/change_pwd/get_verification_code/get_verification_code",
     "pages/change_pwd/new_pwd/new_pwd",

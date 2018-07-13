@@ -7,6 +7,7 @@ const height = device.windowHeight - 50
 Page({
   data: {
     cropperOpt: {
+      who: '',
       id: 'cropper',
       width,
       height,
@@ -31,7 +32,40 @@ Page({
   },
   getCropperImage () {
     this.wecropper.getCropperImage((avatar) => {//获取图片成功
-      if (avatar) {
+      if(this.data.who==1){
+        if (avatar) {
+          //  获取到裁剪后的图片
+          wx.uploadFile({
+            url: getApp().globalData.UpdatePhotoUrl,
+            filePath: avatar,
+            name: 'file',
+            formData: {
+              'uid': getApp().globalData.userId,
+            },
+            success: function (res) {
+              if (res.data == 'true') {
+                getApp().globalData.userPhoto = avatar;
+                wx.redirectTo({
+                  url: '../../userinfo/userinfo',
+                })
+              } else {
+                console.log("修改失败！")
+              }
+              console.log(res.data);
+            },
+            fail: function (res) {
+              console.log(res.data);
+            }
+          })
+        } else {
+          console.log('获取图片失败，请稍后重试')
+        }
+      }else if(this.data.who==2){
+        wx.redirectTo({
+          url: '../../register/register?src='+avatar,
+        })
+      }
+      /*if (avatar) {
         //  获取到裁剪后的图片
         wx.uploadFile({
           url: getApp().globalData.UpdatePhotoUrl,
@@ -42,7 +76,10 @@ Page({
           },
           success: function(res){
             if(res.data == 'true'){
-              console.log("修改成功！")
+              getApp().globalData.userPhoto = avatar;
+              wx.redirectTo({
+                url: '../../userinfo/userinfo',
+              })
             }else{
               console.log("修改失败！")
             }
@@ -52,13 +89,9 @@ Page({
             console.log(res.data);
           }
         })
-        console.log("1");
-        wx.redirectTo({
-          url: `../../userinfo/userinfo?avatar=${avatar}`
-        })
       } else {
         console.log('获取图片失败，请稍后重试')
-      }
+      }*/
     })
   },
   uploadTap () {
@@ -78,7 +111,9 @@ Page({
   },
   onLoad (option) {
     const { cropperOpt } = this.data
-
+    this.setData({
+      who: option.who
+    })
     if (option.src) {
       cropperOpt.src = option.src
       new WeCropper(cropperOpt)
